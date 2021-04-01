@@ -155,7 +155,6 @@ document.querySelectorAll(".btn").forEach(button => button.addEventListener("cli
 document.addEventListener("keydown", function(event) {
   if(isFinite(event.key)) {
     populateDisplay(event.key);
-    console.log(event);
   } else if (event.key == "+") {
     plusOperator(event.key);
   } else if (event.key == "-") {
