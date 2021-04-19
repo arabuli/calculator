@@ -14,8 +14,9 @@ let firstNumber = 0;
 let operation = "";
 let secondNumber = 0;
 
+const selectResults = document.querySelector('.result');
+
 function populateDisplay(num) {
-  const selectResults = document.querySelector('.result');
   selectResults.innerHTML = selectResults.innerHTML + num;
   let checkNumberLength = num.toString().length;
   if(checkNumberLength > 7) {
@@ -47,7 +48,6 @@ function doCalculation(operation) {
   } else if (operation == "*") {
     populateDisplay(operate("multiply", firstNumber, secondNumber));
   }
-
 }
 
 function clearDisplay() {
@@ -117,16 +117,15 @@ function equalsOperator() {
   if (secondNumber == 0) {
     populateDisplay("NO WAY");
   } else {
+    console.log(firstNumber);
+    console.log(operation)
+    console.log(secondNumber);
     doCalculation(operation);
   }
 }
 
-function dotButton() {
-  
-}
-
-document.querySelectorAll(".btn").forEach(button => button.addEventListener("click", function (btn) {
-  //backspace function 
+document.querySelectorAll(".btn").forEach(button => button.addEventListener("click", function () {
+  //backspace function
   if (button.classList.contains("backspace")) {
     backspace();
   } else if (button.classList.contains("clear")) { // screen clear function
